@@ -1,0 +1,43 @@
+<style>
+    h1{
+        text-align:left;
+    }
+    h5{
+        color:red;
+    }
+    .userinputs
+    {
+        font-size: 20px;
+        text-align: center;
+        background-color: rgb(147, 195, 201);
+    }
+
+    </style>
+    
+
+<h1>Sign up </h1>
+
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+
+<fieldset>
+
+<form method = 'POST' action="register">
+    {% csrf_token %}
+
+<div class="userinputs">
+<p>Username :</p>
+<input type="text" name="username" >
+<p>Email :</p>
+<input type="email" name="email" >
+<p>Password :</p>
+<input type="password" name="password" >
+<p>Confirm password :</p>
+<input type="password" name="password2">
+<br>
+<br>
+<input type="submit"/>
+</div>
+</form>
+</fieldset>
